@@ -16,7 +16,7 @@ public class SAddBoostPowerUp : MonoBehaviour
         {
             collision.GetComponent<SPlayerBoostScript>().boostCount += 1;
             // AudioManager.audioPlay(Instantiate(Resources.Load<AudioClip>("Music/478338__joao_janz__bouncing-power-up-1_1")),true,AudioManager.audioManager.audioMixerSFX);
-            // Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
