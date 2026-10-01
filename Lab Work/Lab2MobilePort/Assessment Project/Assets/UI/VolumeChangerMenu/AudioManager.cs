@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -26,6 +27,11 @@ public class AudioManager : MonoBehaviour
     }
     public static AudioSource audioPlay(AudioClip clip, bool shouldDelete, AudioMixerGroup audioMixerGroup)
     {
+        if (!clip)
+        {
+            Debug.LogError("No Log!");
+            return null;
+        }
         GameObject audioObject = Instantiate(Resources.Load<GameObject>("Music/AudioObject"));
         AudioSource audioSource = audioObject.GetComponent<AudioSource>();
 

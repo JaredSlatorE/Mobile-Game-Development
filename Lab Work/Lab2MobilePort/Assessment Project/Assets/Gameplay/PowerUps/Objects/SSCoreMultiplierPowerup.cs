@@ -15,7 +15,7 @@ public class ScoreMultiplierCollider : MonoBehaviour
         {
             collision.GetComponent<PowerUpManager>().addPowerUp(new ScoreBoost(5,2), true);
             ScoreManager.singleton.addScore(10);
-            AudioManager.audioPlay(Instantiate(Resources.Load<AudioClip>("Music/478338__joao_janz__bouncing-power-up-1_1")),true,AudioManager.audioManager.audioMixerSFX);
+            // AudioManager.audioPlay(Instantiate(Resources.Load<AudioClip>("Music/478338__joao_janz__bouncing-power-up-1_1")),true,AudioManager.audioManager.audioMixerSFX);
             Destroy(gameObject);
         }
     }
