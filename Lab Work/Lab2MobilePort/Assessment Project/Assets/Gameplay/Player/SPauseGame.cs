@@ -25,7 +25,7 @@ public class SPauseGame : MonoBehaviour
         if (!PauseUIOpen) //Create the UI
             {
                 Time.timeScale = 0;
-                EventSystem.current.SetSelectedGameObject(pauseUI.transform.Find("PlayButton").transform.gameObject);
+                EventSystem.current.SetSelectedGameObject(pauseUI.transform.Find("PauseButton").transform.gameObject);
                 EventSystem.current.sendNavigationEvents = true;
                 PauseUIOpen = true;
             }
