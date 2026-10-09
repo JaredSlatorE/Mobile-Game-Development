@@ -2262,6 +2262,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7436291044535439908, guid: 5594257b99cc4ca488d9dcd58d54520b, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436291044535439908, guid: 5594257b99cc4ca488d9dcd58d54520b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3658,7 +3666,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1515647867369454893, guid: 863863fabe725bf428d2297af82c59a4, type: 3}
+      propertyPath: m_ScaleFactor
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515647867369454893, guid: 863863fabe725bf428d2297af82c59a4, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515647867369454893, guid: 863863fabe725bf428d2297af82c59a4, type: 3}
       propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515647867369454893, guid: 863863fabe725bf428d2297af82c59a4, type: 3}
+      propertyPath: m_MatchWidthOrHeight
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1515647867369454893, guid: 863863fabe725bf428d2297af82c59a4, type: 3}
