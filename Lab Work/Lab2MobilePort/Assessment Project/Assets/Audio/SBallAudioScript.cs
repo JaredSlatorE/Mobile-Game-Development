@@ -20,7 +20,7 @@ public class SBallSlowerScript : MonoBehaviour
     {
         if (collision.collider.CompareTag("Obsticle"))
         {
-            AudioManager.audioPlay(audioClip,true,AudioManager.audioManager.audioMixerSFX);
+            // AudioManager.audioPlay(audioClip,true,AudioManager.audioManager.audioMixerSFX);
         }
     }
 }
