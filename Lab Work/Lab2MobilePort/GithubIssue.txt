@@ -3,3 +3,5 @@ There was an issue that somehow happened (I am still insure how).
 I committed my work previously, but probably didn't save unity fully which resulted in the progress not saving, and the only way to get it to work was to let unity or GitHub to produce duplicate commits of scripts I already did, basically breaking the whole project. I decided to revert to the version before working on the Scroll Rect and Vertical group parts due to this.
 
 If you see the name "Oscar" this is because of my Primary GitHub account using the name "Oscar Kerman" and switching between the uni and primary kept the "Oscar" name (which is what I go by online because online handles). I still don't know why it kept the name, but if you need proof of this let me know.
+
+After this, I believe this MAY be due to me cancelling the OneDrive the onedrive files upload, but im unsure.
