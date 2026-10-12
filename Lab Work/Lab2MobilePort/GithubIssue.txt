@@ -1,0 +1,5 @@
+There was an issue that somehow happened (I am still insure how).
+
+I committed my work previously, but probably didn't save unity fully which resulted in the progress not saving, and the only way to get it to work was a jumbled mess of GitHub commits that broke unity but kept the work. So I reverted it to the previous version.
+
+If you see the name "Oscar" this is because of either my Unity or Primary GitHub account using the name "Oscar" (which is what I go by online because online handles).
