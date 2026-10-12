@@ -11,6 +11,7 @@ public class SBackButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void pressed()
     {
+        Debug.Log("Pressed");
         eventSystem.SetSelectedGameObject(nextUIButton.gameObject);
         uiCanvas.enabled = false;
         nextCanvas.enabled = true;
