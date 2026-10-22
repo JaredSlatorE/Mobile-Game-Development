@@ -22,4 +22,9 @@ public class LegitRGBScript : MonoBehaviour
         }
 
     }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
