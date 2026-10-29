@@ -1,5 +1,8 @@
 using System;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Ball.Movement
 {
@@ -11,16 +14,17 @@ namespace Ball.Movement
     public class BallMovementScript : MonoBehaviour
     {
         public MovementVariables MovementVariables;
-        public Gyroscope Gyro;
-
+        public Camera Camera;
+        private UnityEngine.InputSystem.Gyroscope Gyroscope;
         void Start()
         {
-            Gyro = Input.gyro;
-            Gyro.enabled = true;
+            Gyroscope = InputSystem.GetDevice<UnityEngine.InputSystem.Gyroscope>();
+            InputSystem.EnableDevice(Gyroscope);
         }
+
         void Update()
         {
-            Debug.Log(Gyro.attitude);
+            gameObject.transform.rotation = new quaternion(0,0,Gyroscope.angularVelocity.x.value * 5,0);
         }
     }
 }
