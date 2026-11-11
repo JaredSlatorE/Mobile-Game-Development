@@ -1,5 +1,6 @@
 using System;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,24 +13,21 @@ namespace Ball.Movement
     }
     public class BallMovementScript : MonoBehaviour
     {
-        public MovementVariables MovementVariables;
-        public Camera Camera;
-        private int testval;
-        private UnityEngine.InputSystem.Gyroscope Gyroscope;
+        public int MovementVariable;
+        public Rigidbody Rigidbody;
+        private UnityEngine.InputSystem.Accelerometer Accelerometer;
         void Start()
         {
-            Debug.Log(SystemInfo.supportsGyroscope);
-            if (SystemInfo.supportsGyroscope)
+            if (SystemInfo.supportsAccelerometer)
             {
-                Gyroscope = InputSystem.GetDevice<UnityEngine.InputSystem.Gyroscope>();
-                InputSystem.EnableDevice(Gyroscope);
+                Accelerometer = InputSystem.GetDevice<UnityEngine.InputSystem.Accelerometer>();
+                InputSystem.EnableDevice(Accelerometer);
             }
         }
 
         void Update()
         {
-            // Debug.Log(Gyroscope.angularVelocity.value.z);
-            gameObject.transform.eulerAngles = new Vector3 (0,0,Gyroscope.angularVelocity.value.z * 90);
+            gameObject.transform.position += new Vector3((Accelerometer.acceleration.y.value * MovementVariable)* Time.deltaTime,0,0);
         }
     }
 }
