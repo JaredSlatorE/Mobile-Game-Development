@@ -16,6 +16,9 @@ namespace Ball.Movement
         public int MovementVariable;
         public Rigidbody Rigidbody;
         private UnityEngine.InputSystem.Accelerometer Accelerometer;
+
+        private float CurrentTime = 0;
+        private float DelayTime = 1f;
         void Start()
         {
             if (SystemInfo.supportsAccelerometer)
@@ -27,6 +30,18 @@ namespace Ball.Movement
 
         void Update()
         {
+            CurrentTime += Time.deltaTime;
+            if (CurrentTime > DelayTime)
+            {
+                if (-0.8 > (Accelerometer.acceleration.value.z))
+                {
+                    Debug.Log("Added");
+
+                    Rigidbody.AddForce(new Vector3(0,50,0));
+                    CurrentTime = 0;
+                }
+            }
+            Debug.Log($"Accel Value: {Accelerometer.acceleration.value.z}");
             gameObject.transform.position += new Vector3((Accelerometer.acceleration.y.value * MovementVariable)* Time.deltaTime,0,0);
         }
     }
