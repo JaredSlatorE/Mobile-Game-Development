@@ -17,16 +17,14 @@ namespace Ball.Movement
         public Rigidbody Rigidbody;
         private UnityEngine.InputSystem.Accelerometer Accelerometer;
 
-        private float RecordedZ = 0;
         private float CurrentTime = 0;
-        private float DelayTime = 0.5f;
+        private float DelayTime = 1f;
         void Start()
         {
             if (SystemInfo.supportsAccelerometer)
             {
                 Accelerometer = InputSystem.GetDevice<UnityEngine.InputSystem.Accelerometer>();
                 InputSystem.EnableDevice(Accelerometer);
-                RecordedZ = Accelerometer.acceleration.z.value;
             }
         }
 
@@ -35,15 +33,15 @@ namespace Ball.Movement
             CurrentTime += Time.deltaTime;
             if (CurrentTime > DelayTime)
             {
-                if (-(RecordedZ + 0.25f) > -(Accelerometer.acceleration.value.z))
+                if (-1 > (Accelerometer.acceleration.value.z))
                 {
                     Debug.Log("Added");
 
-                    Rigidbody.AddForce(new Vector3(0,100,0));
+                    Rigidbody.AddForce(new Vector3(0,50,0));
+                    CurrentTime = 0;
                 }
-                RecordedZ = Accelerometer.acceleration.z.value;
             }
-            Debug.Log(Accelerometer.acceleration.value.z);
+            Debug.Log($"Accel Value: {Accelerometer.acceleration.value.z}");
             gameObject.transform.position += new Vector3((Accelerometer.acceleration.y.value * MovementVariable)* Time.deltaTime,0,0);
         }
     }
