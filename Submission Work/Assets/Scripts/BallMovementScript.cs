@@ -33,7 +33,7 @@ namespace Ball.Movement
             CurrentTime += Time.deltaTime;
             if (CurrentTime > DelayTime)
             {
-                if (-1 > (Accelerometer.acceleration.value.z))
+                if (-0.8 > (Accelerometer.acceleration.value.z))
                 {
                     Debug.Log("Added");
 
