@@ -41,7 +41,7 @@ namespace Ball.Movement
                 }
             }
             Debug.Log($"Accel Value: {Accelerometer.acceleration.value.z}");
-            gameObject.transform.position += new Vector3((Accelerometer.acceleration.y.value * MovementVariable)* Time.deltaTime,0,0);
+            gameObject.transform.position += new Vector3((Accelerometer.acceleration.y.value * MovementVariable)* Time.deltaTime,0,0); //https://youtu.be/wpSm2O2LIRM?si=wAhYx5U9BiMOQkDz
         }
     }
 }
