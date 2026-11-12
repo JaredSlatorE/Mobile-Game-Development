@@ -16,8 +16,12 @@ namespace Ball.Movement
         public int MovementVariable;
         public Rigidbody Rigidbody;
         private UnityEngine.InputSystem.Accelerometer Accelerometer;
+
+        public Collider GroundCollider;
         private float CurrentTime = 0;
         private float DelayTime = 1;
+
+        public bool IsOnGround {get;private set;}
         void Start()
         {
             if (SystemInfo.supportsAccelerometer)
@@ -29,8 +33,9 @@ namespace Ball.Movement
 
         void Update()
         {
+
             CurrentTime += Time.deltaTime;
-            if (CurrentTime > DelayTime)
+            if ((CurrentTime > DelayTime) && IsOnGround)
             {
                 if (-0.9 > (Accelerometer.acceleration.value.z))
                 {
@@ -40,8 +45,20 @@ namespace Ball.Movement
                     CurrentTime = 0;
                 }
             }
-            Debug.Log($"Accel Value: {Accelerometer.acceleration.value.z}");
             gameObject.transform.position += new Vector3((Accelerometer.acceleration.y.value * MovementVariable)* Time.deltaTime,0,0); //https://youtu.be/wpSm2O2LIRM?si=wAhYx5U9BiMOQkDz
+        }
+        private void ChangeGroundState(bool state)
+        {
+            IsOnGround = state;
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            ChangeGroundState(true);
+        }
+        void OnTriggerExit(Collider other)
+        {
+            ChangeGroundState(false);
         }
     }
 }
