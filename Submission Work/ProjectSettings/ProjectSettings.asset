@@ -920,7 +920,8 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Purchasing: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -942,11 +943,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 06fb907a-3ee5-4fdf-a53e-2d08785ba25f
+  cloudProjectId: cc6bf1f5-a8da-4d20-af8f-1e479c319dd5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Mobile Game 2026-10-14_16-26-13
-  organizationId: oscarkerman
+  projectName: Submission Work
+  organizationId: jaredsbcu
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
